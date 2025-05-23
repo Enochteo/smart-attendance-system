@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+venv310/
+
+# OS junk
+.DS_Store
+
+# Logs
+*.log
+
+# Attendance files (optional, if you don’t want to upload logs)
+attendance_*.csv
+student-faces/
