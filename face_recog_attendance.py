@@ -1,3 +1,5 @@
+# This is to test camera feed
+# This can work with spoofing 
 import face_recognition
 import cv2
 import numpy as np
