@@ -44,7 +44,10 @@ python app.py
 ```
 Then visit http://127.0.0.1:5000
 
-
+### To add:
+- Authorization for admin
+- Create cloud base for logs 
+- Hardware integration: Add ESP32 and RFID marking system as well
 ## Author
 - **Enoch Owoade**
 - email: enochowoade@gmail.com
