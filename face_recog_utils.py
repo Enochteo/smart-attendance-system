@@ -1,5 +1,5 @@
-# This is to test camera feed
-# This can work with spoofing 
+# Real-time web feed
+# anti-spoofing integrated
 import face_recognition
 import cv2
 import numpy as np
