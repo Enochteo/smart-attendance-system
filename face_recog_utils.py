@@ -1,3 +1,5 @@
+# This is to test camera feed
+# This can work with spoofing 
 import face_recognition
 import cv2
 import numpy as np
@@ -8,6 +10,7 @@ import mediapipe as mp
 path = 'student-faces'
 images = []
 names = []
+
 
 for filename in os.listdir(path):
     img = cv2.imread(f'{path}/{filename}')
