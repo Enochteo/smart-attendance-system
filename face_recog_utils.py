@@ -46,6 +46,7 @@ blink_counter = {}
 
 def detect_and_log_face(frame):
     global blink_counter
+    name = None
 
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     result = face_mesh.process(rgb)
@@ -97,4 +98,7 @@ def detect_and_log_face(frame):
                     else:
                         cv2.putText(frame, "BLINK TO VERIFY", (30, 30),
                                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-    return frame
+    if name and name in blink_counter and blink_counter[name] >= 1:
+        return frame, True
+    else:
+        return frame, False

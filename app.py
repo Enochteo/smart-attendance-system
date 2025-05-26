@@ -2,6 +2,8 @@ from flask import Flask, render_template, Response, send_file
 import os
 import cv2
 import csv
+import time
+import numpy as np
 from datetime import datetime
 from face_recog_utils import detect_and_log_face
 
@@ -22,7 +24,8 @@ def admin_dashboard():
             reader = csv.reader(file)
             next(reader)
             data = list(reader)
-    return render_template("admin.html", data=data)
+    total = len(data)
+    return render_template("admin.html", data=data, total=total)
 
 @app.route("/download")
 def download_csv():
@@ -30,20 +33,49 @@ def download_csv():
     filename = f"attendance_{date_str}.csv"
     return send_file(filename, as_attachment=True)
 
+@app.route('/mark')
+def mark_attendance_route():
+    return render_template("mark.html")
+
+@app.route('/success')
+def success():
+    return render_template("success.html")
+
 def gen_frames():
+    attendance_done = False
+
     while True:
         success, frame = camera.read()
         if not success:
             break
-        else:
-            # Apply detection here
-            frame = detect_and_log_face(frame)
 
-            # Encode and yield frame to browser
+        frame, attendance_done = detect_and_log_face(frame)
+
+        ret, buffer = cv2.imencode('.jpg', frame)
+        frame_bytes = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+
+        if attendance_done:
+            frame = np.zeros((300, 600, 3), dtype=np.uint8)
+            cv2.putText(frame, "Attendance Marked!", (50, 150), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
+
+            # Encode success frame
             ret, buffer = cv2.imencode('.jpg', frame)
             frame_bytes = buffer.tobytes()
+
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+                b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+
+            # Pause to show frame, then break
+            time.sleep(2)
+            break
+    camera.release()
+    cv2.destroyAllWindows()
+
+
+    camera.release()
+    cv2.destroyAllWindows()
 
 @app.route('/video_feed')
 def video_feed():
