@@ -7,7 +7,7 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 - Web interface made with Flask
 - Daily attendance logs in csv format
 - Admin dashboard with attendance download
-
+- Live camera preview to align your camera
 
 ## Tech Stack
 - Python 3.10 (face recognition was not working with 3.11 apparently)
