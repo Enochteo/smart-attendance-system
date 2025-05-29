@@ -1,5 +1,5 @@
 # Smart Attendance System
-An AI-powered attendance system that uses real-time face recognition and EAR liveness detection for lecturers or whoever to mark attendance through a web interface.
+An AI-powered attendance system that uses real-time face recognition and EAR liveness detection for lecturers or whoever to mark attendance through a 
 
 ## Features
 - Real-time face detection
