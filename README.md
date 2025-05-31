@@ -17,6 +17,10 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 - MediaPipe
 - Bootstrap
 
+
+## Demo
+![Demo_vid](Smart_attendance_demo1.gif)
+
 ## Try it out...?
 ### 1. Clone
 ```bash
