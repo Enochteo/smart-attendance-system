@@ -60,14 +60,12 @@ def gen_frames():
             frame = np.zeros((300, 600, 3), dtype=np.uint8)
             cv2.putText(frame, "Attendance Marked!", (50, 150), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
 
-            # Encode success frame
             ret, buffer = cv2.imencode('.jpg', frame)
             frame_bytes = buffer.tobytes()
 
             yield (b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
 
-            # Pause to show frame, then break
             time.sleep(2)
             break
     camera.release()

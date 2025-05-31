@@ -67,8 +67,8 @@ def detect_and_log_face(frame):
             ear = (vert1 + vert2) / (2.0 * horz)
             print(f"EAR: {ear:.3f}")
 
-            # Blink threshold: EAR below 0.25
-            if ear < 0.6:
+            # Blink threshold: EAR below 0.65
+            if ear < 0.65:
                 print("ear found")
                 for name in blink_counter:
                     blink_counter[name] += 1
