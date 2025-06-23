@@ -8,9 +8,12 @@
 </head>
 <body class="bg-white p-4">
     <div class="container">
-        <h1 class="mb-4">📋 Admin Dashboard</h1>
-        <a href="/download" class="btn btn-success mb-3">⬇️ Download Today's CSV</a>
-        <div class="table-responsive">
+        <h1 class="mb-4"> Admin Dashboard</h1>
+
+        <a href="/download" class="btn btn-success mb-4">⬇️ Download Today’s CSV</a>
+
+        <h4 class="mb-3"> Attendance from CSV File</h4>
+        <div class="table-responsive mb-5">
             <table class="table table-striped table-bordered">
                 <thead class="table-light">
                     <tr>
@@ -29,9 +32,32 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <h5 class="text-muted">Total attendees today: {{ total }}</h5>
         </div>
-        <a href="/" class="btn btn-outline-primary mt-3"> Back to Home</a>
+
+        <h4 class="mb-3"> Database Attendance Logs</h4>
+        <div class="table-responsive mb-5">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Timestamp</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in logs %}
+                    <tr>
+                        <td>{{ log.student.name }}</td>
+                        <td>{{ log.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ log.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h5 class="text-muted"> Total attendees today: {{ total }}</h5>
+        <a href="/" class="btn btn-outline-primary mt-4">Back to Home</a>
     </div>
 </body>
 </html>
