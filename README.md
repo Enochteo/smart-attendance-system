@@ -10,7 +10,7 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 - Live camera preview to align your camera
 
 ## Tech Stack
-- Python 3.10 (face recognition was not working with 3.11 apparently)
+- Python 3.10 (face recognition does not working with 3.11)
 - Flask
 - Open CV
 - face_recognition
@@ -34,13 +34,14 @@ source venv/bin/activate
 ```
 ### 3. Install dependencies
 ```bash
-pip install -r requirements.txtx
+pip install -r requirements.txt
 ```
 ### 4. Create your stored images directory
-Name it "student-faces"
+<!--- Name it "student-faces"
 To use your own faces:
 Place JPG images in the `students_faces/` folder.
-The filename will be used as the name label.
+The filename will be used as the name label.--->
+You can now upload your students pictures via the upload route
 
 ### 5. Run
 ```bash
