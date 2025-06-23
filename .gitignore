@@ -5,6 +5,7 @@ __pycache__/
 # Virtual Environments
 venv/
 venv310/
+new_venv/
 
 # OS junk
 .DS_Store
@@ -14,4 +15,3 @@ venv310/
 
 # Attendance files (optional, if you don’t want to upload logs)
 attendance_*.csv
-student-faces/
