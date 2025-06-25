@@ -10,6 +10,9 @@ new_venv/
 # OS junk
 .DS_Store
 
+# env
+.env
+student-faces/
 # Logs
 *.log
 
