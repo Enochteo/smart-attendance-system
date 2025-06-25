@@ -42,6 +42,8 @@ def load_known_faces(path="student-faces"):
         enc = face_recognition.face_encodings(rgb)
         if enc:
             encodings.append(enc[0])
+        else:
+            print(f"[WARN] Could not extract encoding from {filename}")
 
     return encodings, names, gnumbers
 
@@ -135,7 +137,7 @@ def detect_and_log_face(frame):
                                 db.session.add(log)
                                 db.session.commit()
                                 print(f"[INFO] Attendance marked for {name}")
-                                mark_attendance(name)
+                                marked_today.add(name)
                             else:
                                 print(already_logged)
 
