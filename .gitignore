@@ -12,7 +12,7 @@ new_venv/
 
 # env
 .env
-student-faces/
+
 # Logs
 *.log
 
