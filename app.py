@@ -12,6 +12,7 @@ from flask_migrate import Migrate
 from datetime import datetime
 from models import db, Student, AttendanceLog
 from dotenv import load_dotenv
+from waitress import serve
 load_dotenv()
 
 
@@ -170,6 +171,5 @@ def upload_image():
     return render_template('upload.html')
 
 if __name__ == "__main__":
-    from waitress import serve
     serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
