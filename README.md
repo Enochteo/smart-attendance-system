@@ -22,32 +22,8 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 ![Demo_vid](Smart_attendance_demo1.gif)
 
 ## Try it out...?
-### 1. Clone
-```bash
-git clone https://github.com/Enochteo/smart-attendance-system.git
-cd smart-attendance-system
-```
-### 2. Set up a virtual env
-```bash
-python -m venv venv
-source venv/bin/activate
-```
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-### 4. Create your stored images directory
-<!--- Name it "student-faces"
-To use your own faces:
-Place JPG images in the `students_faces/` folder.
-The filename will be used as the name label.--->
-You can now upload your students pictures via the upload route
-
-### 5. Run
-```bash
-python app.py
-```
-Then visit http://127.0.0.1:5000
+## Deployed website -> https://smart-attendance-system-production-0088.up.railway.app/
+or try it out locally visit logs.md for details.
 
 ### To add:
 - Authorization for admin
