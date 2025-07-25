@@ -21,7 +21,6 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 ## Demo
 ![Demo_vid](Smart_attendance_demo1.gif)
 
-## Try it out...?
 ## Deployed website -> https://smart-attendance-system-production-0088.up.railway.app/
 or try it out locally visit logs.md for details and also before visiting the website.
 
