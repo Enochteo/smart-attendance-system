@@ -5,7 +5,7 @@ An AI-powered attendance system that uses real-time face recognition and EAR liv
 - Real-time face detection
 - Blink-based liveness check (EAR to prevent spoofing)
 - Web interface made with Flask
-- Daily attendance logs in csv format
+- Daily attend..ance logs in csv format
 - Admin dashboard with attendance download
 - Live camera preview to align your camera
 
